@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <!-- left panel -->
+    <div class="panel">
+      <div class="brand">
+        <div class="logo">TTT</div>
+        <div>
+          <h1>Tic Tac Toe</h1>
+          <p class="muted">Classic game — built with vanilla JS</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="option-row">
+          <label class="muted">Mode</label>
+          <select id="mode">
+            <option value="pvp">Two Players</option>
+            <option value="cpu">Play vs CPU</option>
+          </select>
+        </div>
+
+        <div class="option-row">
+          <label class="muted">Your Mark</label>
+          <select id="playerMark">
+            <option value="X">X (first)</option>
+            <option value="O">O (second)</option>
+          </select>
+        </div>
+
+        <div class="option-row">
+          <label class="muted">CPU Difficulty</label>
+          <select id="cpuLevel">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button id="newBtn" class="btn">New Game</button>
+          <button id="resetScore" class="btn secondary small">Reset Scores</button>
+        </div>
+
+        <div class="scoreboard">
+          <div class="score">
+            <div class="muted">Player X</div>
+            <div class="num" id="scoreX">0</div>
+          </div>
+          <div class="score">
+            <div class="muted">Draws</div>
+            <div class="num" id="scoreD">0</div>
+          </div>
+          <div class="score">
+            <div class="muted">Player O</div>
+            <div class="num" id="scoreO">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board -->
+    <div class="board-wrap">
+      <div class="topbar">
+        <div>
+          <div class="status" id="status">Turn: <span id="turn">X</span></div>
+          <div class="muted" id="substatus">Make your move</div>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button id="undoBtn" class="btn secondary small">Undo</button>
+          <button id="autoSolve" class="btn secondary small">Hint</button>
+        </div>
+      </div>
+
+      <div class="board" id="board"></div>
+
+      <div style="margin-top:10px; text-align:center;">
+        <button id="restart" class="btn secondary">Restart Round</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

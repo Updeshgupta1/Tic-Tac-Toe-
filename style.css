@@ -1,0 +1,123 @@
+:root {
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --win: #10b981;
+}
+
+/* Basic */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial;
+  background: linear-gradient(180deg, #e6eefc, #ffffff 70%);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Layout */
+.app {
+  width: 100%;
+  max-width: 950px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 22px;
+}
+
+/* Side Panel */
+.panel {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.logo {
+  width: 60px; height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#7c3aed,#a78bfa);
+  display: flex; align-items:center; justify-content:center;
+  color: white; font-weight: 800; font-size: 20px;
+}
+
+.controls { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+.option-row { display: flex; flex-direction: column; gap: 5px; }
+select { padding: 10px; border-radius: 8px; border: 1px solid #d1d5db; }
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.secondary {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: black;
+}
+.small { padding: 6px 8px; font-size: 0.9rem; }
+
+/* Scoreboard */
+.scoreboard { display: flex; gap: 12px; margin-top: 10px; }
+.score {
+  flex: 1;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+.num { font-size: 1.4rem; font-weight: 800; }
+
+/* Game Board */
+.board-wrap {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.topbar {
+  display: flex; justify-content: space-between; margin-bottom: 10px;
+}
+
+.board {
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.cell {
+  background: #f8fafc;
+  border-radius: 12px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  display:flex; align-items:center; justify-content:center;
+  cursor: pointer;
+  transition: .15s;
+}
+.cell:hover { transform: translateY(-4px); }
+
+.cell.x { color:#2563eb; }
+.cell.o { color:#ef4444; }
+
+.cell.win {
+  background: #ecfdf5;
+  border: 2px solid var(--win);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .app { grid-template-columns:1fr; }
+}
