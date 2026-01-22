@@ -3,42 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
+
+  <title>Tic Tac Toe — Vanilla JavaScript Game</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="app">
-    <!-- left panel -->
+
+    <!-- ================= LEFT PANEL ================= -->
     <div class="panel">
       <div class="brand">
         <div class="logo">TTT</div>
         <div>
           <h1>Tic Tac Toe</h1>
-          <p class="muted">Classic game — built with vanilla JS</p>
+          <p class="muted">Classic game built using Vanilla JavaScript</p>
         </div>
       </div>
 
       <div class="controls">
+
         <div class="option-row">
-          <label class="muted">Mode</label>
-          <select id="mode">
+          <label for="mode" class="muted">Game Mode</label>
+          <select id="mode" aria-label="Select game mode">
             <option value="pvp">Two Players</option>
             <option value="cpu">Play vs CPU</option>
           </select>
         </div>
 
         <div class="option-row">
-          <label class="muted">Your Mark</label>
-          <select id="playerMark">
-            <option value="X">X (first)</option>
-            <option value="O">O (second)</option>
+          <label for="playerMark" class="muted">Your Mark</label>
+          <select id="playerMark" aria-label="Choose your mark">
+            <option value="X">X (First)</option>
+            <option value="O">O (Second)</option>
           </select>
         </div>
 
         <div class="option-row">
-          <label class="muted">CPU Difficulty</label>
-          <select id="cpuLevel">
+          <label for="cpuLevel" class="muted">CPU Difficulty</label>
+          <select id="cpuLevel" aria-label="CPU difficulty">
             <option value="easy">Easy</option>
             <option value="normal" selected>Normal</option>
             <option value="hard">Hard</option>
@@ -46,8 +50,8 @@
         </div>
 
         <div style="display:flex; gap:10px; margin-top:10px;">
-          <button id="newBtn" class="btn">New Game</button>
-          <button id="resetScore" class="btn secondary small">Reset Scores</button>
+          <button type="button" id="newBtn" class="btn">New Game</button>
+          <button type="button" id="resetScore" class="btn secondary small">Reset Scores</button>
         </div>
 
         <div class="scoreboard">
@@ -55,40 +59,50 @@
             <div class="muted">Player X</div>
             <div class="num" id="scoreX">0</div>
           </div>
+
           <div class="score">
             <div class="muted">Draws</div>
             <div class="num" id="scoreD">0</div>
           </div>
+
           <div class="score">
             <div class="muted">Player O</div>
             <div class="num" id="scoreO">0</div>
           </div>
         </div>
+
       </div>
     </div>
 
-    <!-- Board -->
+    <!-- ================= GAME BOARD ================= -->
     <div class="board-wrap">
+
       <div class="topbar">
         <div>
-          <div class="status" id="status">Turn: <span id="turn">X</span></div>
+          <div class="status">
+            Turn: <span id="turn">X</span>
+          </div>
           <div class="muted" id="substatus">Make your move</div>
         </div>
 
         <div style="display:flex; gap:10px;">
-          <button id="undoBtn" class="btn secondary small">Undo</button>
-          <button id="autoSolve" class="btn secondary small">Hint</button>
+          <button type="button" id="undoBtn" class="btn secondary small">Undo</button>
+          <button type="button" id="autoSolve" class="btn secondary small">Hint</button>
         </div>
       </div>
 
-      <div class="board" id="board"></div>
+      <div class="board" id="board" aria-label="Tic Tac Toe board"></div>
 
       <div style="margin-top:10px; text-align:center;">
-        <button id="restart" class="btn secondary">Restart Round</button>
+        <button type="button" id="restart" class="btn secondary">
+          Restart Round
+        </button>
       </div>
+
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
